@@ -1,4 +1,4 @@
-name: Deploy to Cloudflare Worker
+name: Deploy to CFWORKERS
 
 on:
   push:
@@ -6,30 +6,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: 拉取代码
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 设置 Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "pnpm"
 
-      - name: 安装 pnpm
-        uses: pnpm/action-setup@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.14.4
+          run_install: false
 
-      - name: 安装依赖
-        run: pnpm install
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
 
-      - name: 构建 Astro 项目
+      - name: Build site
         run: pnpm run build
 
-      - name: 部署到 Cloudflare Worker
+      - name: Deploy to Cloudflare Worker
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_WORKER_SECRETS }}
