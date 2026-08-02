@@ -5,7 +5,7 @@ pinned: false
 description: 在Firefly中使用表达性代码的代码块在 Markdown 中的外观。
 tags: [Markdown, Firefly]
 category: 文章示例
-image: ./images/firefly3.avif
+image: ../../assets/postimages/firefly3.avif
 slug: code-examples
 ---
 
@@ -20,7 +20,7 @@ slug: code-examples
 #### 常规语法高亮
 
 ```js
-console.log('此代码有语法高亮!')
+console.log("此代码有语法高亮!");
 ```
 
 #### 渲染 ANSI 转义序列
@@ -61,7 +61,7 @@ console.log('此代码有语法高亮!')
 #### 代码编辑器框架
 
 ```js title="my-test-file.js"
-console.log('标题属性示例')
+console.log("标题属性示例");
 ```
 
 ---
@@ -118,11 +118,11 @@ New-Alias tail Watch-Tail
 
 ```js title="line-markers.js" del={2} ins={3-4} {6}
 function demo() {
-  console.log('此行标记为已删除')
+  console.log("此行标记为已删除");
   // 此行和下一行标记为已插入
-  console.log('这是第二个插入行')
+  console.log("这是第二个插入行");
 
-  return '此行使用中性默认标记类型'
+  return "此行使用中性默认标记类型";
 }
 ```
 
@@ -140,7 +140,7 @@ function demo() {
 >
   {children &&
     !active &&
-    (typeof children === 'string' ? <span>{children}</span> : children)}
+    (typeof children === "string" ? <span>{children}</span> : children)}
 </button>
 ```
 
@@ -158,10 +158,9 @@ function demo() {
   disabled={disabled}
   active={active}
 >
-
   {children &&
     !active &&
-    (typeof children === 'string' ? <span>{children}</span> : children)}
+    (typeof children === "string" ? <span>{children}</span> : children)}
 </button>
 ```
 
@@ -200,19 +199,19 @@ function demo() {
 ```js "given text"
 function demo() {
   // 标记行内的任何给定文本
-  return '支持给定文本的多个匹配项';
+  return "支持给定文本的多个匹配项";
 }
 ```
 
 #### 正则表达式
 
 ```ts /ye[sp]/
-console.log('单词 yes 和 yep 将被标记。')
+console.log("单词 yes 和 yep 将被标记。");
 ```
 
 #### 转义正斜杠
 
-```sh /\/ho.*\//
+```sh //ho.*//
 echo "Test" > /home/test.txt
 ```
 
@@ -220,7 +219,7 @@ echo "Test" > /home/test.txt
 
 ```js "return true;" ins="inserted" del="deleted"
 function demo() {
-  console.log('这些是插入和删除的标记类型');
+  console.log("这些是插入和删除的标记类型");
   // return 语句使用默认标记类型
   return true;
 }
@@ -235,7 +234,7 @@ function demo() {
 ```js wrap
 // 启用换行的示例
 function getLongString() {
-  return '这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间'
+  return "这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间";
 }
 ```
 
@@ -244,7 +243,7 @@ function getLongString() {
 ```js wrap=false
 // wrap=false 的示例
 function getLongString() {
-  return '这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间'
+  return "这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间";
 }
 ```
 
@@ -253,7 +252,7 @@ function getLongString() {
 ```js wrap preserveIndent
 // preserveIndent 示例（默认启用）
 function getLongString() {
-  return '这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间'
+  return "这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间";
 }
 ```
 
@@ -262,7 +261,7 @@ function getLongString() {
 ```js wrap preserveIndent=false
 // preserveIndent=false 的示例
 function getLongString() {
-  return '这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间'
+  return "这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间";
 }
 ```
 
@@ -272,29 +271,29 @@ function getLongString() {
 
 ```js collapse={1-5, 12-14, 21-24}
 // 所有这些样板设置代码将被折叠
-import { someBoilerplateEngine } from '@example/some-boilerplate'
-import { evenMoreBoilerplate } from '@example/even-more-boilerplate'
+import { someBoilerplateEngine } from "@example/some-boilerplate";
+import { evenMoreBoilerplate } from "@example/even-more-boilerplate";
 
-const engine = someBoilerplateEngine(evenMoreBoilerplate())
+const engine = someBoilerplateEngine(evenMoreBoilerplate());
 
 // 这部分代码默认可见
-engine.doSomething(1, 2, 3, calcFn)
+engine.doSomething(1, 2, 3, calcFn);
 
 function calcFn() {
   // 您可以有多个折叠部分
-  const a = 1
-  const b = 2
-  const c = a + b
+  const a = 1;
+  const b = 2;
+  const c = a + b;
 
   // 这将保持可见
-  console.log(`计算结果: ${a} + ${b} = ${c}`)
-  return c
+  console.log(`计算结果: ${a} + ${b} = ${c}`);
+  return c;
 }
 
 // 直到块末尾的所有代码将再次被折叠
-engine.closeConnection()
-engine.freeMemory()
-engine.shutdown({ reason: '示例样板代码结束' })
+engine.closeConnection();
+engine.freeMemory();
+engine.shutdown({ reason: "示例样板代码结束" });
 ```
 
 ## 行号
@@ -305,23 +304,23 @@ engine.shutdown({ reason: '示例样板代码结束' })
 
 ```js showLineNumbers
 // 此代码块将显示行号
-console.log('来自第2行的问候!')
-console.log('我在第3行')
+console.log("来自第2行的问候!");
+console.log("我在第3行");
 ```
 
 ---
 
 ```js showLineNumbers=false
 // 此块禁用行号
-console.log('你好?')
-console.log('抱歉，你知道我在第几行吗?')
+console.log("你好?");
+console.log("抱歉，你知道我在第几行吗?");
 ```
 
 ### 更改起始行号
 
 ```js showLineNumbers startLineNumber=5
-console.log('来自第5行的问候!')
-console.log('我在第6行')
+console.log("来自第5行的问候!");
+console.log("我在第6行");
 ```
 
 ## Tab 代码块
@@ -379,9 +378,9 @@ def greet(name):
 
 标签支持 [emoji 短代码](https://github.com/omnidan/node-emoji#readme)，构建时会自动转换成 emoji：
 
-````markdown
+```markdown
 ::: code-group labels=[:package: npm, :package: pnpm, :yarn: yarn]
-````
+```
 
 ::: code-group labels=[:package: npm, :package: pnpm, :yarn: yarn]
 
