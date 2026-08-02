@@ -21,6 +21,7 @@ pnpm-debug.log*
 .DS_Store
 
 .vercel
+.obsidian/
 
 package-lock.json
 bun.lockb
@@ -35,7 +36,6 @@ Firefly-docs/
 
 cache/
 package/
-.obsidian/
 
 # vibe coding
 .codex*
