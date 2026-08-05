@@ -6,27 +6,32 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
   // 站点标题
-  title: "Firefly",
+  title: "喵栈",
 
   // 站点副标题
-  subtitle: "Demo site",
+  subtitle: "喵的分享",
 
   // 站点 URL
   site_url: "https://www.stackmeow.tech",
 
   // 站点描述
   description:
-    "Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
+    "一座以猫咪为精神象征，收纳所有技术、创作与生活的私人数字档案馆。",
 
   // 站点关键词
   keywords: [
-    "Firefly",
-    "Fuwari",
-    "Astro",
-    "ACGN",
+    "喵栈",
+    "配置文件",
+    "静态页面",
     "博客",
-    "技术博客",
-    "静态博客",
+    "服务器",
+    "反向代理",
+    "规则",
+    "Docker",
+    "nginx",
+    "linux",
+    "macos",
+    "数据库",
   ],
 
   // 主题色
@@ -40,14 +45,14 @@ export const siteConfig: SiteConfig = {
   // 页面整体宽度（单位：rem）
   // 数值越大可以让页面内容区域更宽
   // 在使用单侧栏边栏时，建议调低一些宽度以获得更好的视觉效果。
-  pageWidth: 100,
+  pageWidth: 85,
 
   // 网站Card样式配置
   card: {
     // 是否开启卡片边框和阴影，开启后让网站更有立体感
-    border: false,
+    border: true,
     // 是否让卡片风格跟随主题色相
-    followTheme: false,
+    followTheme: true,
   },
 
   // Favicon 配置
@@ -55,7 +60,7 @@ export const siteConfig: SiteConfig = {
   favicon: [
     {
       // 图标文件路径
-      src: "/favicon/firefly-32.png",
+      src: "/favicon/favicon-2.png",
       // 可选，指定主题 'light' | 'dark'
       // theme: "light",
       // 可选，图标大小
@@ -76,14 +81,14 @@ export const siteConfig: SiteConfig = {
     // 使用 Astro 图标库时不需要设置 valueDark，图标会自动跟随主题亮暗色切换
     logo: {
       type: "image",
-      value: "assets/images/logo/firefly-light.png",
-      valueDark: "assets/images/logo/firefly-dark.png",
-      alt: "🍀",
+      value: "/favicon/favicon-1.png",
+      valueDark: "/favicon/favicon-1.png",
+      alt: "🐱",
     },
     // 导航栏标题
-    title: "Firefly",
+    title: "喵栈",
     // 全宽导航栏，导航栏是否占满屏幕宽度
-    widthFull: false,
+    widthFull: true,
     // 导航菜单对齐方式，left：左对齐，center：居中
     menuAlign: "center",
     // 导航栏图标和标题是否跟随主题色
@@ -93,7 +98,7 @@ export const siteConfig: SiteConfig = {
   },
 
   // 站点开始日期，用于统计运行天数
-  siteStartDate: "2025-01-01",
+  siteStartDate: "2026-08-01",
 
   // 站点时区（IANA 时区字符串），用于格式化bangumi、rss里的构建日期时间等等..
   // 示例："Asia/Shanghai", "UTC", 如果为空，则按照构建服务器的时区进行时区转换
@@ -108,9 +113,9 @@ export const siteConfig: SiteConfig = {
     // 留言板页面开关，需要配置评论系统
     guestbook: true,
     // 番组计划页面开关，含追番、游戏、书籍和音乐
-    bangumi: true,
+    bangumi: false,
     // 相册页面开关
-    gallery: true,
+    gallery: false,
     // 追番页面开关
     anime: true,
     // 动态页面开关
@@ -118,7 +123,7 @@ export const siteConfig: SiteConfig = {
   },
 
   // 分类导航栏开关，在首页和归档页顶部显示分类快捷导航
-  categoryBar: true,
+  categoryBar: false,
 
   // 归档页是否折叠非最新年份文章，禁用后默认展开全部年份
   foldArticle: true,
@@ -129,6 +134,9 @@ export const siteConfig: SiteConfig = {
     defaultMode: "list",
     // 移动端默认布局模式，不设置则跟随 defaultMode
     mobileDefaultMode: "grid",
+    // 列表模式下封面图显示在哪一侧："right" 右侧，"left" 左侧
+		// 网格模式的封面固定在卡片顶部，不受此项影响
+		coverPosition: "left",
     // 文章简介显示行数，设为 0 则不截断
     descriptionLines: 2,
     // 文章卡片底部统计和发布日期是否显示图标
@@ -136,15 +144,15 @@ export const siteConfig: SiteConfig = {
     // 标签显示位置
     // 设置为"meta"：显示在文章标题下的元数据
     // 设置为"bottom"：顶替stats在底部显示
-    tagsPosition: "bottom",
+    tagsPosition: "meta",
     // PostMeta 元数据显示控制
     meta: {
       // 是否显示发布日期
-      showPublished: true,
+      showPublished: false,
       // 是否显示分类
       showCategory: true,
       // 是否显示标签
-      showTags: true,
+      showTags: false,
       // 标签数量，设为 0 则不限制
       tagCount: 5,
       // 是否显示字数
@@ -158,9 +166,9 @@ export const siteConfig: SiteConfig = {
       // 是否显示发布日期
       showPublished: true,
       // 是否显示字数
-      showWords: true,
+      showWords: false,
       // 是否显示阅读时间
-      showReadingTime: true,
+      showReadingTime: false,
     },
     // 网格布局配置，仅在 defaultMode 为 "grid" 或允许切换布局时生效
     grid: {
@@ -176,10 +184,10 @@ export const siteConfig: SiteConfig = {
     // 提醒框（Admonitions）配置，修改后需要重启开发服务器才能生效
     // 主题：'github' | 'obsidian' | 'vitepress' | 'docusaurus'，每个主题风格和语法不同，可根据喜好选择
     rehypeCallouts: {
-      theme: "github",
+      theme: "obsidian",
       // 是否启用兼容 Python-Markdown 风格的 admonition 语法（!!!和???语法）
       // 注意：只有 theme 配置成 obsidian 主题才能基本支持这些语法，其他主题会有样式问题或不兼容的情况
-      enablePythonMarkdownAdmonitions: false,
+      enablePythonMarkdownAdmonitions: true,
     },
     // 文章页底部的"上次编辑时间"卡片开关
     showLastModified: true,
@@ -194,15 +202,15 @@ export const siteConfig: SiteConfig = {
   // bangumi配置
   bangumi: {
     // Bangumi用户ID
-    userId: "1143164",
+    userId: "",
     // 数据模式：static=构建时获取，dynamic=客户端实时获取
     // static 模式在构建时获取数据并静态渲染，部署后数据不更新
     // dynamic 模式在浏览器中实时请求 API，始终显示最新数据
     mode: "dynamic",
     // Bangumi API 地址
-    apiUrl: "https://bgmapi.anibt.net",
+    apiUrl: "",
     // 详情页地址
-    subjectBaseUrl: "https://bgmmi.anibt.net/subject/",
+    subjectBaseUrl: "",
     // 条目类型排序，数组中的类型将按顺序优先展示
     // 可选值: "anime" | "book" | "music" | "game" | "real" (暂不支持"real"类型)
     // 未列出的类型将按默认顺序排在后面
@@ -218,7 +226,7 @@ export const siteConfig: SiteConfig = {
     // Bilibili 配置
     bilibili: {
       // 你的 Bilibili 用户 UID
-      uid: "38932988",
+      uid: "286690101",
     },
     // TMDB 配置（可选，需要翻墙）
     // tmdb: {

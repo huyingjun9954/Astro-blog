@@ -1,29 +1,29 @@
-# 关于我 / About Me
+# 关于本站 / About
 
-你好！我是 **夏叶** ，一个在数字世界中默默无闻的一片叶子。
+我是StackMeow站的站长我就叫你们可以直接叫我StackMeow
 
-## 🛠️ 关于本站
+# StackMeow 代表一种状态：
 
-这个网站使用 **Astro** 框架构建，采用了 [Firefly](https://github.com/CuteLeaf/Firefly) 模板，Firefly 是基于 [Fuwari](https://github.com/saicaca/fuwari) 的二次开发。
+理性的技术积累（stack），搭配松弛治愈的生活趣味（meow），是理性与温柔的结合。这个门户不止是技术博客，更是你的线上数字仓库，堆叠项目、文字、灵感与日常，以可爱轻松的方式记录自我。
 
-**Firefly** 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
+## 世界观基础设定🐱
+1. 在广阔无边的数字虚空里，散落着无数碎片化的数据、代码、文字、影像、灵感碎片，它们漂泊无依，极易消散。
 
+2. 有一只永远充满好奇心的小猫 Meow，天生喜欢收集一切有趣的碎片。它搭建起一座无限延伸、层层向上的高塔，名为 Stack。
 
-**🖥️在线预览： [Firefly - Demo site](https://firefly.cuteleaf.cn/)**
+3. 喵栈没有边界，一层存放代码与技术项目，一层存放随笔与文字，一层存放照片与旅途，一层存放工具与奇思妙想，每一层都不断向上堆叠、持续扩容。
 
-**🏠我的博客： [https://blog.cuteleaf.cn](https://blog.cuteleaf.cn/)**
+4. 栈喵是喵栈的守护者，穿梭在冰冷规整的堆叠层之间，为枯燥的数据、理性的代码附上温度与烟火气。
 
-**📝Firefly使用文档： [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
+## 核心种族：栈喵
+* 不同于普通数字生灵，栈喵天生拥有收纳之力，能够收集四散的数据碎片，一层层构筑喵栈。
 
-**⭐Firefly开源地址：[https://github.com/CuteLeaf/Firefly](https://github.com/CuteLeaf/Firefly)** 
-
-**⭐Fuwari开源地址：[https://github.com/saicaca/fuwari](https://github.com/saicaca/fuwari)**
-
-::github{repo="CuteLeaf/Firefly"}
-
-::github{repo="saicaca/fuwari"}
-
----
-
-*感谢你的来访！希望在这里能找到对你有用的内容！*
-
+## 世界核心法则🐈‍⬛
+1. **永不删除法则**
+	所有堆叠进喵栈的碎片永久留存，不会随时间清除。过往的不成熟、粗浅笔记、旧项目全部保留，见证完整成长轨迹。
+	
+2. 自由构筑法则
+	喵栈形态完全由栈喵决定，不受外界标准约束。可以严谨规整，也可以随性松散，不必迎合大众审美与流量趋势。
+	
+3. 温柔共生法则
+	规整的堆栈结构（理性）与慵懒的栈喵（感性）必须共存，缺少任意一方，喵栈都会失去灵魂。只有逻辑没有热爱，塔只是冰冷数据库；只有随性没有沉淀，碎片终将消散。

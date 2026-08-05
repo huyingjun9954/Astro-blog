@@ -5,6 +5,7 @@ export const ko: Translation = {
 	[Key.home]: "홈",
 	[Key.about]: "소개",
 	[Key.archive]: "아카이브",
+	[Key.terms]: "서비스 이용 약관",
 	[Key.search]: "검색",
 	[Key.searchNoResults]: "검색 결과가 없습니다.",
 	[Key.searchTypeSomething]: "검색어를 입력하세요...",

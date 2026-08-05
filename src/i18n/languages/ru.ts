@@ -5,6 +5,7 @@ export const ru: Translation = {
 	[Key.home]: "Главная",
 	[Key.about]: "О нас",
 	[Key.archive]: "Архив",
+	[Key.terms]: "Условия предоставления услуг",
 	[Key.search]: "Поиск",
 	[Key.searchNoResults]: "Результаты не найдены.",
 	[Key.searchTypeSomething]: "Введите ключевое слово для поиска...",
