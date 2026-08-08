@@ -53,7 +53,7 @@ sudo apt install nginx
 
 # 认识Nginx文件夹
 如果你也是debian系发行版那么你在刚刚过下载好Nginx的时候，文件结构就应该是下面这个样子：
-```bash
+```bash title="zsh"
 /etc/nginx/
 ├── conf.d
 ├── fastcgi_params
@@ -101,12 +101,12 @@ touch server1.conf server2.conf
  ```
  我们需要在`sites-available`这个文件夹中创建配置文件，并通过`ln`命令为其中的配置文件创建软链接到sites-enabled文件夹。
  创建配置文件
- ```bash
+ ```bash title="zsh"
  cd /etc/nginx/sites-available
  touch server1.conf server2.conf
  ```
  创建软链接（创建软链接必须使用绝对路径）
- ```bash
+ ```bash title="zsh"
  ln -s /etc/nginx/sites-available/server1.conf /etc/nginx/sites-enabled
  ln -s /etc/nginx/sites-available/server2.conf /etc/nginx/sites-enabled
  ```
