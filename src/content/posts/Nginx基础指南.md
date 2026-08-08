@@ -53,7 +53,7 @@ sudo apt install nginx
 
 # 认识Nginx文件夹
 如果你也是debian系发行版那么你在刚刚过下载好Nginx的时候，文件结构就应该是下面这个样子：
-```
+```bash
 /etc/nginx/
 ├── conf.d
 ├── fastcgi_params
@@ -91,7 +91,7 @@ touch server1.conf server2.conf
  mkdir -p /etc/nginx/sites-enabled
  ```
  编辑Nginx根目录中的`nginx.conf`文件，在`https`块内添加以下内容：
- ``` {4}
+ ```conf {4}
  <!-- /etc/nginx/nginx.conf -->
  http {
     # ... 其他配置 ...
@@ -114,7 +114,7 @@ touch server1.conf server2.conf
 
 # 配置文件示例
 本地服务为通过本地端口直接访问的服务：
-```{5,14,17,18,32}
+```conf {5,14,17,18,32}
 # 强制HTTP重定向到HTTPS（Force SSL）
 server {
     listen 80;
@@ -162,7 +162,7 @@ server {
 使用本地入口文件的方式配置Nginx其实已经有相当大一部分是作为Web服务器的功能来使用了，需要匹配的就是本地入口文件的路径。
 > [!WARNING] 注意
 > 使用入口文件的方式可能会出现权限问题，如果有此类问题核心思路就是确保Nginx有访问入口文件的权限
-```
+```conf {5,6,16,21,22,52,53,54,55,94,108,109,110}
 # 强制HTTP重定向到HTTPS（Force SSL）
 server {
     listen 80;
