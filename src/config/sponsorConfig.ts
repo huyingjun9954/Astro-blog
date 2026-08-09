@@ -28,7 +28,7 @@ export const sponsorConfig: SponsorConfig = {
 			// 收款码图片路径（需要放在 public 目录下）
 			qrCode: "/assets/images/sponsor/alipay.jpeg",
 			link: "",
-			description: "使用 支付宝 扫码打赏",
+			description: "使用支付宝打赏StackMeow",
 			enabled: true,
 		},
 		{
@@ -36,7 +36,7 @@ export const sponsorConfig: SponsorConfig = {
 			icon: "fa7-brands:weixin",
 			qrCode: "/assets/images/sponsor/wechat.jpeg",
 			link: "",
-			description: "使用 微信 扫码打赏",
+			description: "使用微信打赏StackMeow",
 			enabled: true,
 		},
 		{
@@ -44,7 +44,7 @@ export const sponsorConfig: SponsorConfig = {
 			icon: "simple-icons:kofi",
 			qrCode: "",
 			link: "https://ko-fi.com/stackmeow",
-			description: "Buy a Coffee for Firefly",
+			description: "Buy a Coffee for StackMeow",
 			enabled: true,
 		},
 		{
@@ -52,7 +52,7 @@ export const sponsorConfig: SponsorConfig = {
 			icon: "simple-icons:afdian",
 			qrCode: "",
 			link: "https://ifdian.net/a/stackmeow",
-			description: "通过 爱发电 进行打赏",
+			description: "通过爱发电打赏StackMeow",
 			enabled: true,
 		},
 	],
