@@ -40,6 +40,15 @@ export const friendsConfig: FriendLink[] = [
 		weight: 10, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
 	},
+	{
+		title: "年华",
+		imgurl:
+			"https://reknal.com/assets/images/avatar.avif",
+		desc: "机电专业的普通大专生",
+		siteurl: "https://reknal.com/",
+		weight: 10, // 权重，数字越大排序越靠前
+		enabled: true, // 是否启用
+	},
 ];
 
 // 获取启用的友链并进行排序
