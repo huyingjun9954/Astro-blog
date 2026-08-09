@@ -1,10 +1,10 @@
 ---
 title: Nginx基础指南
 published: 2026-08-09
-pinned: true
+pinned: false
 description: 关于Nginx的一些基础概念以及基本的使用
 tags: [Nginx, Web服务器, 反向代理, 自建服务指南]
-category: 反向代理
+category: 网站服务
 image: https://www.stackmeow.tech/file/1786195906007_20260808213141022.png
 slug: NginxBasicsGuide
 ---
