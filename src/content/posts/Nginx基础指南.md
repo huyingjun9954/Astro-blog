@@ -8,7 +8,7 @@ tags:
   - Web服务器
   - 反向代理
   - 自建服务指南
-category: 文章示例
+category: 反向代理
 image: https://www.stackmeow.tech/file/1786195906007_20260808213141022.png
 slug: NginxBasicsGuide
 ---
