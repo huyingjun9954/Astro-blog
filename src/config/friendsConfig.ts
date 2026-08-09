@@ -44,8 +44,17 @@ export const friendsConfig: FriendLink[] = [
 		title: "年华",
 		imgurl:
 			"https://reknal.com/assets/images/avatar.avif",
-		desc: "机电专业的普通大专生",
+		desc: "共同见证奇迹诞生！",
 		siteurl: "https://reknal.com/",
+		weight: 10, // 权重，数字越大排序越靠前
+		enabled: true, // 是否启用
+	},
+		{
+		title: "Xixmu",
+		imgurl:
+			"https://xixmu.top/_astro/head_ima.rsW3s28l_1KtIxl.avif",
+		desc: "在记忆干枯前描绘",
+		siteurl: "https://xixmu.top",
 		weight: 10, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
 	},
