@@ -131,7 +131,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 组件类型：广告栏组件 1
 			type: "advertisement",
 			// 是否启用该组件
-			enable: false,
+			enable: true,
 			// 是否显示组件标题
 			showTitle: false,
 			// 组件位置
@@ -139,12 +139,13 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			// 是否在文章详情页显示
 			showOnPostPage: true,
 			// 组件专属配置（广告内容直接在此配置）
+			// 七牛云广告
 			specificConfig: {
 				ad: {
 					image: {
-						src: "",
-						alt: "",
-						link: "",
+						src: "https://www.stackmeow.tech/file/1786252355175_20260809131228183.png",
+						alt: "七牛云",
+						link: "https://s.qiniu.com/Z32uy2",
 						external: true,
 					},
 					// 是否允许关闭广告
