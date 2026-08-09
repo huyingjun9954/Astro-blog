@@ -35,13 +35,13 @@ export const friendsConfig: FriendLink[] = [
 		title: "年华",
 		imgurl:
 			"https://tu.520781.xyz/file/blog/1779979945007_a.gif",
-		desc: "Hello,everyone！ 我是年华 一个喜欢折腾的开发者，同时每天库库刷题的初中学生 一个…",
+		desc: "分享生活和技术。",
 		siteurl: "https://blog.amamo.top",
 		weight: 10, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
 	},
 	{
-		title: "年华",
+		title: "潇绪空のBlog",
 		imgurl:
 			"https://reknal.com/assets/images/avatar.avif",
 		desc: "共同见证奇迹诞生！",
