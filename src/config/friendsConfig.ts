@@ -58,6 +58,15 @@ export const friendsConfig: FriendLink[] = [
 		weight: 10, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
 	},
+			{
+		title: "YuJing的记忆终端",
+		imgurl:
+			"https://www.yujingblog.top/assets/home/avatar.webp",
+		desc: "不怪天气不好，是我心事太多。",
+		siteurl: "https://www.yujingblog.top",
+		weight: 10, // 权重，数字越大排序越靠前
+		enabled: true, // 是否启用
+	},
 ];
 
 // 获取启用的友链并进行排序
