@@ -17,6 +17,10 @@ slug: NginxBasicsGuide
 而Nginx就是负责处理并优化这一句**如果······那么······** 这个句式的一个程序。
 > [!NOTE]
 > 不过在这里必须说一下，Nginx本身是一个Web服务器，只是它在反向代理方面的卓越性能导致了大家都把它当作反向代理工具来使用的。
+
+> [!INFO]
+Nginx区分究竟要当反向代理工具还是当作Web服务器来使用其实有一个很简单的方式：Nginx可以直接托管（尤其是静态文件）网站的时候，那么Nginx就是Web服务器；如果Nginx无法直接读取后端文件，需要将用户的请求转发给后端的Web服务器，后端服务器处理请求后返回给Nginx，那么它就要做一个反向代理工具。
+
 # 安装Nginx
 > [!IMPORTANT] 必要性
 > 各个Linux发行版/Windows中尽量按照官网的操作步骤下载最新的Nginx版本，因为旧版本最大的问题就是存在各种漏洞，而这些漏洞也在最新版本中被恢复。我这里用debian12的系统作为演示。
@@ -158,6 +162,11 @@ server {
 使用本地入口文件的方式配置Nginx其实已经有相当大一部分是作为Web服务器的功能来使用了，需要匹配的就是本地入口文件的路径。
 > [!WARNING] 注意
 > 使用入口文件的方式可能会出现权限问题，如果有此类问题核心思路就是确保Nginx有访问入口文件的权限
+
+> [!INFO]
+下面这个配置文件，我们可以看到有上下紧邻的两行代码：`root /WEB/typecho;`
+    `index index.php index.html;` 这本来应该是Nginx作为Web服务器时候的常用配置；但是下面这个配置中，有另外两行上下紧邻的代码：`fastcgi_pass unix:/run/php/php7.4-fpm.sock;`
+    `fastcgi_index index.php;`；这里Nginx正是自己读取不了php文件无法自己直接托管，所以将代理转发给运行协议为fastcgi的php7.4-fpm.sock这个进程，fastcgi_pass就是协议代理的配置，所以尽管下面的配置中明确配置了后端文件路径，后端文件匹配正则等，但是最终要通过代理进行转发，那么它依然是一个Nginx作为反向代理工具的配置，而不是Web服务器的配置。
 ```conf {5,6,16,21,22,52,53,54,55,94,108,109,110}
 # 强制HTTP重定向到HTTPS（Force SSL）
 server {
@@ -211,7 +220,7 @@ server {
 
 
     # 主请求代理配置
-    root /WEB/typecho;
+    root /var/www/typecho;
     index index.php index.html;
     charset utf-8;
 
