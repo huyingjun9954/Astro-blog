@@ -165,8 +165,11 @@ server {
 
 > [!INFO]
 下面这个配置文件，我们可以看到有上下紧邻的两行代码：`root /WEB/typecho;`
-    `index index.php index.html;` 这本来应该是Nginx作为Web服务器时候的常用配置；但是下面这个配置中，有另外两行上下紧邻的代码：`fastcgi_pass unix:/run/php/php7.4-fpm.sock;`
+     `index index.php index.html;` 这本来应该是Nginx作为Web服务器时候的常用配置；但是下面这个配置中，有另外两行上下紧邻的代码：`fastcgi_pass unix:/run/php/php7.4-fpm.sock;`
     `fastcgi_index index.php;`；这里Nginx正是自己读取不了php文件无法自己直接托管，所以将代理转发给运行协议为fastcgi的php7.4-fpm.sock这个进程，fastcgi_pass就是协议代理的配置，所以尽管下面的配置中明确配置了后端文件路径，后端文件匹配正则等，但是最终要通过代理进行转发，那么它依然是一个Nginx作为反向代理工具的配置，而不是Web服务器的配置。
+	
+
+	
 ```conf {5,6,16,21,22,52,53,54,55,94,108,109,110}
 # 强制HTTP重定向到HTTPS（Force SSL）
 server {
@@ -293,7 +296,8 @@ location ~ \.php$ {
 
 > [!HINT] 回收开头
 > 可以仔细查看中类型的配置文件，我们文章开头说过反向代理就是**如果······那么······** 的句式。而在配置文件中他们是这样的：
-```
+```conf
+<!--/etc/nginx/conf.d/example.conf-->
 # 强制HTTP重定向到HTTPS（Force SSL）
 server {
     listen 80;
