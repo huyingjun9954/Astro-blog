@@ -58,7 +58,7 @@ export const friendsConfig: FriendLink[] = [
 		weight: 10, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
 	},
-			{
+	{
 		title: "YuJing的记忆终端",
 		imgurl:
 			"https://www.yujingblog.top/assets/home/avatar.webp",
@@ -67,6 +67,15 @@ export const friendsConfig: FriendLink[] = [
 		weight: 10, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
 	},
+	{
+		title: "Silvaire's Blog",
+		imgurl:
+			"https://wsrv.nl/?url=avatars.githubusercontent.com/u/184231508?s=400&u=0a370792ba6bbb95a04d309171b562bcd7283a0f&v=4&mask=circle",
+		desc: " ",
+		siteurl: "https://silvaire.top",
+		weight: 10, // 权重，数字越大排序越靠前
+		enabled: true, // 是否启用
+	},	
 ];
 
 // 获取启用的友链并进行排序
