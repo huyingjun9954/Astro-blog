@@ -22,6 +22,9 @@ export const siteConfig: SiteConfig = {
   keywords: [
     "喵栈",
     "配置文件",
+    "stackmeow",
+    "栈喵",
+    "教程",
     "静态页面",
     "博客",
     "服务器",
