@@ -76,6 +76,15 @@ export const friendsConfig: FriendLink[] = [
 		weight: 10, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
 	},	
+	{
+		title: "星慕小栈",
+		imgurl:
+			"https://xmu.p8.ink/assets/images/avatar.avif",
+		desc: "仰望星空，慕光而行。",
+		siteurl: "https://xmu.p8.ink",
+		weight: 10, // 权重，数字越大排序越靠前
+		enabled: true, // 是否启用
+	},	
 ];
 
 // 获取启用的友链并进行排序
