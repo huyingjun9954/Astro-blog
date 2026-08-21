@@ -85,6 +85,15 @@ export const friendsConfig: FriendLink[] = [
 		weight: 10, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
 	},	
+	{
+		title: "临渊羡鱼",
+		imgurl:
+			"https://x1anyu.cn/assets/images/avatar.png",
+		desc: "久有羡鱼意，不甘空望川. 躬身耕岁月，步步赴清澜",
+		siteurl: "https://x1anyu.cn",
+		weight: 10, // 权重，数字越大排序越靠前
+		enabled: true, // 是否启用
+	},
 ];
 
 // 获取启用的友链并进行排序
