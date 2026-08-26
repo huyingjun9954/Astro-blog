@@ -28,9 +28,15 @@ export const commentConfig: CommentConfig = {
 		lang: "zh-CN",
 		// 设置 Waline 评论系统表情地址
 		emoji: [
+			"https://unpkg.com/@waline/emojis@1.4.0/hoyoverse-hi3",
+			"https://cdn.jsdelivr.net/gh/hotarugali/Emoji@bilibili2233/waline/bilibili2233",
 			"https://unpkg.com/@waline/emojis@1.4.0/weibo",
 			"https://unpkg.com/@waline/emojis@1.4.0/bilibili",
 			"https://unpkg.com/@waline/emojis@1.4.0/bmoji",
+			"https://unpkg.com/@waline/emojis@1.4.0/tieba",
+			"https://unpkg.com/@waline/emojis@1.4.0/qq",
+			"https://unpkg.com/@waline/emojis@1.4.0/coolapk",
+			"https://cdn.jsdelivr.net/gh/hotarugali/Emoji@ali/waline/ali",
 		],
 		// 评论登录模式。可选值如下：
 		//   'enable'   —— 默认，允许访客匿名评论和用第三方 OAuth 登录评论，兼容性最佳。
