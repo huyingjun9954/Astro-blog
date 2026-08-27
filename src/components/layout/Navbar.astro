@@ -51,7 +51,8 @@ const navbarWidthFull = siteConfig.navbar.widthFull ?? false;
 const navbarMenuAlign = siteConfig.navbar.menuAlign ?? "center";
 const isNavbarMenuCentered = navbarMenuAlign === "center";
 
-// 检查是否为首页
+// 检查是否有任何显示设置可用（总开关关闭时下方各项均为 false）
+const isDisplaySettingsEnabled = displaySettingsConfig.enable;
 const isHomePageCheck = isHomePage(Astro.url.pathname);
 
 // 检查是否有任何显示设置可用
@@ -225,7 +226,7 @@ const logoVariants = await Promise.all(
             </div>
         )}
         <NavMenuPanel links={links}></NavMenuPanel>
-        <DisplaySettings client:load></DisplaySettings>
+        {isDisplaySettingsEnabled && <DisplaySettings client:load></DisplaySettings>}
     </div>
 </div>
 
