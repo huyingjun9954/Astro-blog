@@ -7,6 +7,7 @@ import type {
 	WALLPAPER_NONE,
 	WALLPAPER_OVERLAY,
 } from "../constants/constants";
+import type { NsfwMode } from "./nsfw";
 
 export type LIGHT_DARK_MODE =
 	| typeof LIGHT_MODE
@@ -79,17 +80,26 @@ export type SiteConfig = {
 
 	// 页面开关配置
 	pages: {
+		booknav: boolean; // 书签导航页面开关
 		friends: boolean; // 友链页面开关
 		sponsor: boolean; // 打赏页面开关
 		guestbook: boolean; // 留言板页面开关
 		bangumi: boolean;
+		vndb: boolean;
+		mal: boolean; // MyAnimeList 页面开关
 		gallery: boolean; // 相册页面开关
-		anime: boolean; // 追番页面开关
+		bilibili: boolean; // 哔哩哔哩追番页面开关
 		dynamic: boolean; // 动态页面开关
 	};
 
 	// 分类导航栏开关
 	categoryBar?: boolean;
+
+	// 分类导航栏按钮样式："pill"=胶囊，"rectangle"=矩形（配色同胶囊）
+	categoryStyle?: "pill" | "rectangle";
+
+	// 标签样式："pill"=主题色胶囊，"pill-gray"=中性灰胶囊，"rectangle"=主题色矩形
+	tagStyle?: "pill" | "pill-gray" | "rectangle";
 
 	// 归档页是否折叠非最新年份文章
 	foldArticle?: boolean;
@@ -104,6 +114,8 @@ export type SiteConfig = {
 		showStatsIcons?: boolean; // 文章卡片底部统计是否显示图标
 		// 标签显示位置："meta"=跟随元数据行（默认），"bottom"=卡片底部独立一行（将替换stats显示，二者只能选其一）
 		tagsPosition?: "meta" | "bottom";
+		// 底部标签样式："chip"=按钮样式，跟随 tagStyle 的胶囊/矩形（默认），"text"=无底色，只有文字
+		tagsBottomStyle?: "chip" | "text";
 		// PostMeta 元数据显示控制
 		meta?: {
 			showPublished?: boolean; // 是否显示发布日期
@@ -125,6 +137,8 @@ export type SiteConfig = {
 			masonry: boolean;
 			// 网格模式卡片最小宽度(px)，浏览器根据容器宽度自动计算列数，默认 320
 			columnWidth?: number;
+			// 网格模式封面是否撑满卡片贴边，false 则按卡片内边距内缩
+			coverFullWidth?: boolean;
 		};
 	};
 
@@ -160,17 +174,33 @@ export type SiteConfig = {
 			game?: boolean;
 			real?: boolean;
 		};
+		nsfw?: NsfwMode; // NSFW 处理："off" 不过滤 | "blur" 仅模糊封面 | "hide" 隐藏条目
 	};
 
-	// 追番配置（Bilibili + TMDB）
-	anime?: {
-		bilibili?: {
-			uid: string; // Bilibili 用户 UID
-		};
-		tmdb?: {
-			apiKey: string; // TMDB API Key
-			listId: string; // TMDB 列表 ID
-		};
+	// VNDB 配置
+	vndb?: {
+		userId?: string; // VNDB 用户 ID，例如 "u2"
+		mode?: "static" | "dynamic"; // 数据模式：static=构建时获取，dynamic=客户端实时获取
+		downloadCovers?: boolean; // 构建时下载并压缩 VNDB 封面到本地
+		apiUrl?: string; // VNDB API 地址
+		vnBaseUrl?: string; // VNDB 条目详情页地址，末尾需要带 /
+		apiToken?: string; // 私密列表访问令牌，仅 static 模式下使用
+		nsfw?: NsfwMode; // NSFW 处理："off" 不过滤 | "blur" 仅模糊封面 | "hide" 隐藏条目
+	};
+
+	// MyAnimeList 配置
+	mal?: {
+		username?: string; // MyAnimeList 用户名，列表需为公开状态
+		clientId?: string; // MyAnimeList Client ID，从 https://myanimelist.net/apiconfig 注册免费应用后获取
+		apiUrl?: string; // MAL API 地址
+		animeBaseUrl?: string; // 动画条目详情页地址，末尾需要带 /
+		mangaBaseUrl?: string; // 漫画条目详情页地址，末尾需要带 /
+		nsfw?: NsfwMode; // NSFW 处理："off" 不过滤 | "blur" 仅模糊封面 | "hide" 隐藏条目
+	};
+
+	// Bilibili 配置
+	bilibili?: {
+		uid?: string; // Bilibili 用户 UID
 	};
 
 	// 分页配置

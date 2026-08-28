@@ -1,8 +1,34 @@
 import type { SiteConfig } from "@/types/siteConfig";
+import { resolvePageToggles } from "../utils/page-toggle-utils";
+import { resolveSiteLang } from "../utils/site-config-utils";
 
 // 定义站点语言
 // 语言代码，例如：'zh_CN', 'zh_TW', 'en', 'ja', 'ru', 'ko'。
-const SITE_LANG = "zh_CN";
+const SITE_LANG = resolveSiteLang("zh_CN");
+
+  // 页面开关配置 - 控制特定页面的访问权限，设为false会返回404并自动隐藏对应的导航栏菜单项
+  const pages = resolvePageToggles({
+    // 友链页面开关
+    friends: true,
+    // 打赏页面开关
+    sponsor: true,
+    // 留言板页面开关，需要配置评论系统
+    guestbook: true,
+    // 番组计划页面开关，含追番、游戏、书籍和音乐
+    bangumi: false,
+    // 相册页面开关
+    gallery: false,
+    // 追番页面开关
+    bilibili: true,
+    // 动态页面开关
+    dynamic: true,
+    //书签导航页面开关
+    booknav: false,
+    // VNDB页面开关
+	vndb: false,
+	// MyAnimeList页面开关
+	mal: false,
+  });
 
 export const siteConfig: SiteConfig = {
   // 站点标题
@@ -35,6 +61,9 @@ export const siteConfig: SiteConfig = {
     "linux",
     "macos",
     "数据库",
+    "SQL",
+    "PostgresQL",
+    "MySQL",
   ],
 
   // 主题色
@@ -107,26 +136,19 @@ export const siteConfig: SiteConfig = {
   // 示例："Asia/Shanghai", "UTC", 如果为空，则按照构建服务器的时区进行时区转换
   timezone: "Asia/Shanghai",
 
-  // 页面开关配置 - 控制特定页面的访问权限，设为false会返回404并自动隐藏对应的导航栏菜单项
-  pages: {
-    // 友链页面开关
-    friends: true,
-    // 打赏页面开关
-    sponsor: true,
-    // 留言板页面开关，需要配置评论系统
-    guestbook: true,
-    // 番组计划页面开关，含追番、游戏、书籍和音乐
-    bangumi: false,
-    // 相册页面开关
-    gallery: false,
-    // 追番页面开关
-    anime: true,
-    // 动态页面开关
-    dynamic: true,
-  },
-
   // 分类导航栏开关，在首页和归档页顶部显示分类快捷导航
   categoryBar: false,
+  
+  // 分类导航栏按钮样式
+  // "pill"：胶囊，主题色浅底圆角
+  // "rectangle"：矩形，配色同胶囊，仅圆角更小
+  categoryStyle: "rectangle",
+
+  // 标签样式，作用于文章列表底部标签、标签页和侧边栏标签
+  // "pill"：胶囊，主题色底圆角
+  // "pill-gray"：胶囊，中性灰底圆角
+  // "rectangle"：矩形，主题色底小圆角
+  tagStyle: "pill",
 
   // 归档页是否折叠非最新年份文章，禁用后默认展开全部年份
   foldArticle: true,
@@ -138,8 +160,8 @@ export const siteConfig: SiteConfig = {
     // 移动端默认布局模式，不设置则跟随 defaultMode
     mobileDefaultMode: "grid",
     // 列表模式下封面图显示在哪一侧："right" 右侧，"left" 左侧
-		// 网格模式的封面固定在卡片顶部，不受此项影响
-		coverPosition: "left",
+	// 网格模式的封面固定在卡片顶部，不受此项影响
+	coverPosition: "left",
     // 文章简介显示行数，设为 0 则不截断
     descriptionLines: 2,
     // 文章卡片底部统计和发布日期是否显示图标
@@ -148,6 +170,11 @@ export const siteConfig: SiteConfig = {
     // 设置为"meta"：显示在文章标题下的元数据
     // 设置为"bottom"：顶替stats在底部显示
     tagsPosition: "meta",
+    // 底部标签样式，仅在 tagsPosition 为 "bottom" 时生效
+	// "chip"：按钮样式，形状跟随上方的 tagStyle 配置
+	// "text"：无底色，只有文字
+	tagsBottomStyle: "chip",
+	
     // PostMeta 元数据显示控制
     meta: {
       // 是否显示发布日期
@@ -180,6 +207,12 @@ export const siteConfig: SiteConfig = {
       // 网格模式卡片最小宽度(px)，浏览器根据容器宽度自动计算列数
       columnWidth: 320,
     },
+  },
+
+  // 分页配置
+  pagination: {
+    // 每页显示的文章数量
+    postsPerPage: 10,
   },
 
   // 文章内容页配置
@@ -222,29 +255,50 @@ export const siteConfig: SiteConfig = {
     // categories: {
     // 	game: false, // 禁用游戏分类显示
     // },
+    nsfw: "hide",
   },
+  
+// ── VNDB配置 ──────────────────────────────────
+    vndb: {
+		// VNDB 用户 ID
+		userId: "u358128",
+		// 数据模式：static=构建时获取，dynamic=客户端实时获取
+		// static 模式在构建时获取数据并静态渲染，部署后数据不更新
+		// dynamic 模式在浏览器中实时请求 API，始终显示最新数据
+		mode: "static",
+		// 构建时下载并压缩封面到 public/vndb-covers，图片由本站服务器提供
+		downloadCovers: false,
+		// VNDB API 地址
+		apiUrl: "https://api.vndb.org/kana",
+		// 条目详情页地址，末尾需要带 /
+		vnBaseUrl: "https://vndb.org/",
+		// 私密列表访问令牌，仅 static 模式下使用；不要把真实令牌提交到公开仓库！
+		apiToken: "",
+		// NSFW 处理："off" 不过滤 | "blur" 仅模糊封面 | "hide" 隐藏条目
+		nsfw: "hide",
+	},
 
-  // 追番配置（Bilibili + TMDB）
-  anime: {
-    // Bilibili 配置
+	// ── MyAnimeList配置 ──────────────────────────────────
+	mal: {
+		// MyAnimeList 用户名（列表需为公开状态，私密列表无法读取）
+		username: "cuteleaf",
+		// MyAnimeList Client ID，在 https://myanimelist.net/apiconfig 注册免费应用后获取
+		clientId: "	0ef34371450f9c6c809deaadec6aa8f3",
+		// MAL API 地址
+		apiUrl: "https://api.myanimelist.net/v2",
+		// 动画条目详情页地址，末尾需要带 /
+		animeBaseUrl: "https://myanimelist.net/anime/",
+		// 漫画条目详情页地址，末尾需要带 /
+		mangaBaseUrl: "https://myanimelist.net/manga/",
+		// NSFW 处理："off" 不过滤 | "blur" 仅模糊封面 | "hide" 隐藏条目
+		nsfw: "hide",
+	},
+
+  // 追番配置（Bilibili）
     bilibili: {
       // 你的 Bilibili 用户 UID
       uid: "286690101",
     },
-    // TMDB 配置（可选，需要翻墙）
-    // tmdb: {
-    //   // TMDB API 密钥
-    //   apiKey: "your_tmdb_api_key",
-    //   // TMDB 列表 ID
-    //   listId: "your_list_id",
-    // },
-  },
-
-  // 分页配置
-  pagination: {
-    // 每页显示的文章数量
-    postsPerPage: 10,
-  },
 
   // 图像优化及响应式配置
   // 图像优化压缩只保留avif或webp
@@ -267,4 +321,7 @@ export const siteConfig: SiteConfig = {
 
   // 站点语言，在本配置文件顶部SITE_LANG定义
   lang: SITE_LANG,
+  
+  // 页面开关配置，在本配置文件顶部pages定义
+  pages,
 };

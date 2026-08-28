@@ -43,10 +43,17 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 			LinkPresets.Gallery,
 
 			// 追番
-			LinkPresets.Anime,
+			LinkPresets.Bilibili,
+			// 书签导航
+			LinkPresets.Booknav,
 
 			// 番组计划
 			LinkPresets.Bangumi,
+			// VNDB
+			LinkPresets.VNDB,
+
+			// MyAnimeList
+			LinkPresets.MAL,
 		],
 	});
 
@@ -156,6 +163,11 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:favorite",
 		pageKey: "sponsor",
 	},
+	Series: {
+		name: "系列",
+		url: "/series/",
+		icon: "material-symbols:layers",
+	},
 	Guestbook: {
 		name: "留言",
 		url: "/guestbook/",
@@ -167,11 +179,29 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/about/",
 		icon: "material-symbols:person",
 	},
+	VNDB: {
+		name: "VNDB",
+		url: "/vndb/",
+		icon: "material-symbols:chrome-reader-mode-rounded",
+		pageKey: "vndb",
+	},
+	MAL: {
+		name: "AnimeList",
+		url: "/myanimelist/",
+		icon: "material-symbols:menu-book",
+		pageKey: "mal",
+	},
 	Bangumi: {
 		name: "番组计划",
 		url: "/bangumi/",
 		icon: "material-symbols:movie",
 		pageKey: "bangumi",
+	},
+	Booknav: {
+		name: "书签导航",
+		url: "/booknav/",
+		icon: "material-symbols:bookmarks",
+		pageKey: "booknav",
 	},
 	Gallery: {
 		name: "相册",
@@ -179,11 +209,11 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:photo-library",
 		pageKey: "gallery",
 	},
-	Anime: {
+	Bilibili: {
 		name: "追番",
-		url: "/anime/",
-		icon: "material-symbols:live-tv",
-		pageKey: "anime",
+		url: "/bilibili/",
+		icon: "fa7-brands:bilibili",
+		pageKey: "bilibili",
 	},
 };
 
