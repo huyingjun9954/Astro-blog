@@ -133,7 +133,8 @@ postgresql需要切换到对应的数据库之后来指定某个用户对这个�
 依次执行下面五条SQL语句授予用户对 public schema 的所有权限（包括现有表和序列）
 ```bash title="psql bash"
 GRANT ALL PRIVILEGES ON SCHEMA public TO dbname_user;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO dbname_user; GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO dbname_user;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO dbname_user;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO dbname_user;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO dbname_user;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO dbname_user;
 ```
