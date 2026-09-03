@@ -19,7 +19,7 @@ slug: pgsqlBuild
 首先我们需要理解一个概念就是PostgresQL是这个程序的名称，它本身不是数据库，他是一个创建管理数据库的软件，本文使用Docker搭建Postgresql，并不是你创建的每一个应用都需要创建一个Postgresql容器，而已创建好Postgresql容器后你可以添加无数个数据库来让你的应用连接它。
 
 > [!INFO]
-本文使用Docker-compose搭建PostgreSQL，使用的PostgresQL镜像版本是17.9（只是我喜欢这个版本而已. 
+本文使用Docker-compose搭建PostgreSQL，使用的PostgresQL镜像版本是18.6（只是我喜欢这个版本而已）
 
 
 使用以下命令来拉取镜像(镜像)：
