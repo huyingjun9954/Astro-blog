@@ -25,7 +25,7 @@ slug: pgsqlBuild
 使用以下命令来拉取镜像(镜像)：
 	
 ```bash title="zsh"
-docker pull postgres:17.9
+docker pull postgres:18.6
 ```
 创建一个用于postgresql容器持久化的挂载目录
 ```bash title="zsh"
@@ -41,7 +41,7 @@ docker network create custom-network
 <!--/dockercompose/postgresql/docker-compose.yml-->
 services:
   postgres:
-    image: postgres:17.9        # 使用官方PostgreSQL 17.9镜像
+    image: postgres:18.6        # 使用官方PostgreSQL 18.6镜像
     container_name: postgreSQL  # 指定容器名称（可选）
     # network_mode: host          # 容器使用宿主机网络（主要为了配置权限远程访问）
     ports:
@@ -55,7 +55,7 @@ services:
       TZ: Asia/Shanghai
       restart: always
     volumes:
-      - postgresql_data:/var/lib/postgresql/data  # 持久化数据卷
+      - postgresql_data:/var/lib/postgresql  # 持久化数据卷
     networks:
       - custom-network  # 自定postgresql桥接网络   
 volumes:
